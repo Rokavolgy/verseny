@@ -1,0 +1,8 @@
+.max600px{
+    max-width: 600px !important;
+    margin: auto;
+}
+
+.pointer{
+    cursor: pointer;
+}
