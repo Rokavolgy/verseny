@@ -15,9 +15,11 @@ Route::get('/login', function() {
 Auth::routes([
     'register' => false,
 ]);
-Route::get('/felhasznalok', [App\Http\Controllers\UserController::class, 'list'])->name('users.list')->middleware();
+
 Route::post('/felhasznalo/update', [App\Http\Controllers\UserController::class, 'update'])->name('users.update')->middleware(\App\Http\Middleware\AjaxRequest::class);
 Route::post('/felhasznalo/delete', [App\Http\Controllers\UserController::class, 'delete'])->name('users.delete');
+Route::post('/felhasznalo/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create')->middleware();
+Route::get('/felhasznalok', [App\Http\Controllers\UserController::class, 'list'])->name('users.list')->middleware();
 Route::post('/felhasznalo/{userId}', [App\Http\Controllers\UserController::class, 'showDetails'])->name('users.showDetails')->middleware();
 
 Route::get('/versenyek/delete/{verseny}', [App\Http\Controllers\HomeController::class, 'delete'])->name('verseny.delete');

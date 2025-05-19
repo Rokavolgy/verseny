@@ -1,7 +1,7 @@
 <div class="card">
         <div class="card-header">{{ __('Új résztvevő hozzáadása') }}</div>
 <div class="card-body">
-    <form method="POST" id="addParticipantForm" action="{{ "o" }}">
+    <form method="POST" id="addParticipantForm" action="{{ route('users.create') }}">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Név</label>

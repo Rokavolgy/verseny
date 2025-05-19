@@ -41,7 +41,7 @@ class UserController extends Controller
             'birthdate' => 'nullable|date',
         ]);
         Log::info($validated);
-        $user = User::create($validated);
+        User::create($validated);
 
         return response()->json([
             'message' => 'Új felhasználó létrehozva.',
